@@ -30,7 +30,7 @@ export default function AnimeSection() {
             >
               <Card
                 hoverable
-                style={{  backgroundColor: 'transparent', border: 'none', color: 'white' }}
+                style={{ backgroundColor: 'transparent', border: 'none', color: 'white' }}
                 cover={<img alt="example" src={anime.anime_img} className={styles.image} />}
               >
                 <Meta

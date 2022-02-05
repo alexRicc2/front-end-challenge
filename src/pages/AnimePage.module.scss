@@ -2,9 +2,20 @@
   background-color: #6C150F;
   padding: 2rem;
   display: flex;
+  min-height: 90vh;
+  @media screen and (max-width: 760px){
+    flex-direction: column;
+  }
   .image{
     width: 480px;
+    @media screen and (max-width: 900px){
+      width: 400px;
+    }
+    @media screen and (max-width: 760px){
+      width: 100%;
+    }
   }
+
   .title{
     div{
       div{
@@ -29,5 +40,19 @@
         font-weight: bold;
       }
     }
+  }
+}
+.erro{
+  background-color: #6C150F;
+  min-height: 90vh;
+  h3{
+    padding: 2rem 0;
+    font-size: 1.4rem;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+  }
+  img{
+    width: 100%;
   }
 }
