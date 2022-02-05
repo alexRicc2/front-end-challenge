@@ -1,0 +1,49 @@
+.secao{
+  padding: 3rem 2rem;
+  background-color: #6C150F;
+  h2{
+    font-size: 1.3rem;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+  }
+  .lista{
+    display: flex;
+    flex-wrap: wrap;
+    .card{
+      width: 15%;
+      margin: 1rem 0.7%;
+      @media screen and (max-width: 1080px) {
+        width: 20%;
+        margin: 1rem 2.3%;
+      }
+
+      @media screen and (max-width: 820px) {
+        width: 25%;
+        margin: 1rem 4%;
+      }
+      @media screen and (max-width: 700px) {
+        width: 40%;
+        margin: 1rem 5%;
+      }
+      @media screen and (max-width: 490px) {
+        width: 240px;
+        margin: auto ;
+      }
+
+      .title{
+        div{
+          div{
+            color: white !important;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+    .image{
+      height: 370px;
+      
+    }
+  }
+}

@@ -4,7 +4,6 @@ import AnimeSection from '../components/AnimeSection'
 export default function Home(){
   return (
     <>   
-    <Header/>
     <AnimeSection/>
     </>
   )

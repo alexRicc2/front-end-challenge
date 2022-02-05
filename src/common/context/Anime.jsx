@@ -4,7 +4,7 @@ export const AnimeContext = createContext();
 AnimeContext.displayName = "Anime";
 
 export const AnimeProvider = ({ children }) => {
-  const [anime, setAnime] = useState('krai');
+  const [anime, setAnime] = useState('');
   return (
     <AnimeContext.Provider value={{ anime, setAnime }}>
       {children}

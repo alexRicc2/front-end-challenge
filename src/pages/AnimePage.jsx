@@ -3,6 +3,7 @@ import { useParams} from 'react-router-dom'
 import { Card } from 'antd';
 import api from '../services/api';
 const { Meta } = Card;
+import styles from './AnimePage.module.scss';
 
 export default function AnimePage(){
   const {name} = useParams()
@@ -12,27 +13,26 @@ export default function AnimePage(){
       if (resp.statusText == "OK") setAnimeObject(resp.data)
       console.log(resp)
     })
-  },[])
+  },[name])
   return(
-    <>
+    <section className={styles.secao}>
         <Card
-            hoverable
-            style={{ width: 240 }}
-            cover={<img alt={name} src={animeObject?.img} />}
+            style={{  backgroundColor: 'transparent', border: 'none', color: 'white' }}
+            cover={<img alt={name} src={animeObject?.img} className={styles.image}/>}
           >
-            <Meta title={name} />
+            <Meta title={name.split('_').join(' ')} className={styles.title} />
           </Card>
           
           {animeObject?.data != undefined &&
-          <div>
-            {console.log('oi', animeObject.data)}
+          <div className={styles.facts}>
+          <h3>Curiosidades de {name.split('_').join(' ')}</h3>
           {animeObject?.data.map(fact=>{
-            return(<p key={fact.id}
-            >{fact.fact}</p>)
+            return(<p key={fact.fact_id}
+            ><span>{fact.fact_id}:</span> {fact.fact}</p>)
             
           })}
           </div>
 }
-    </>
+    </section>
   )
 }
