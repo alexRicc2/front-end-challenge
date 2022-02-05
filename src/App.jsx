@@ -1,14 +1,21 @@
-import react from 'react'
-import Header from './components/Header'
 import { AnimeProvider } from './common/context/Anime'
-import AnimeSection from './components/AnimeSection'
 import 'antd/dist/antd.css';
+import Home from './pages/Home';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import Anime from './pages/AnimePage';
+import AnimePage from './pages/AnimePage';
 function App() {
  
   return (
     <AnimeProvider>
-    <Header/>
-    <AnimeSection/>
+      <Router>
+      <Routes>
+        <Route exact path='/' element={<Home/>}/>
+          
+        <Route exact path='/anime/:name' element={<AnimePage/>} />
+
+      </Routes>
+    </Router>
     </AnimeProvider>
   )
 }
